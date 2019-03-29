@@ -1,0 +1,83 @@
+Index: bookkeeping/main.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- bookkeeping/main.py	(date 1553865921204)
++++ bookkeeping/main.py	(date 1553865921204)
+@@ -0,0 +1,20 @@
++from bookkeeping.application.db.people import get_employees
++from bookkeeping.application.salary import calculate_salary
++
++
++def main():
++    name = get_employees('Козлов Егор') # Получаем имя струдника 1
++    name_2 = get_employees('Сидоров Иван') # Получаем имя сотрудника 2
++    print(name)
++    print(name_2)
++    salary_name = calculate_salary(name, 1300, 24)
++    # Вводим для сотрудника_1, оклад, сколько дней отработано, получаем зарплату
++    salary_name_2 = calculate_salary(name_2, 1450, 20)
++    # Вводим для сотрудника_2, оклад, сколько дней отработано, получаем зарплату
++    print(salary_name)
++    print(salary_name_2)
++
++if __name__ == '__main__':
++
++    main()
++
+Index: bookkeeping/application/salary.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- bookkeeping/application/salary.py	(date 1553863278908)
++++ bookkeeping/application/salary.py	(date 1553863278908)
+@@ -0,0 +1,7 @@
++def calculate_salary(name, daily_salary, worked_days):
++    salary = daily_salary * worked_days
++
++    return name, salary
++
++
++
+Index: bookkeeping/application/db/__init__.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- bookkeeping/application/db/__init__.py	(date 1553849648777)
++++ bookkeeping/application/db/__init__.py	(date 1553849648777)
+@@ -0,0 +1,0 @@
+Index: bookkeeping/application/db/people.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- bookkeeping/application/db/people.py	(date 1553863320838)
++++ bookkeeping/application/db/people.py	(date 1553863320838)
+@@ -0,0 +1,8 @@
++def get_employees(name):
++
++    return name
++
++
++
++
++
+Index: bookkeeping/__init__.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- bookkeeping/__init__.py	(date 1553772213305)
++++ bookkeeping/__init__.py	(date 1553772213305)
+@@ -0,0 +1,0 @@
+Index: bookkeeping/application/__init__.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- bookkeeping/application/__init__.py	(date 1553849526332)
++++ bookkeeping/application/__init__.py	(date 1553849526332)
+@@ -0,0 +1,0 @@
